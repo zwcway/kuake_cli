@@ -98,7 +98,11 @@ func download(client *sdk.QuarkClient, path, destPath string) *CLIResult {
 		if destPath == "" {
 			destPath, _ = os.Getwd()
 		}
-		return downloadDir(client, fid, path, destPath)
+		var wg errgroup.Group
+		wg.SetLimit(3)
+		p := mpb.New(mpb.WithWidth(64))
+
+		return downloadDir(client, &wg, p, path, destPath)
 	}
 
 	fileName, _ := fileInfo.Data["file_name"].(string)
@@ -164,7 +168,7 @@ func downloadFile(client *sdk.QuarkClient, fid, path, destPath, fileName string,
 	}
 }
 
-func downloadDir(client *sdk.QuarkClient, fid, path, destPath string) *CLIResult {
+func downloadDir(client *sdk.QuarkClient, wg *errgroup.Group, p *mpb.Progress, path, destPath string) *CLIResult {
 	pathName := filepath.Base(path)
 	destPath = filepath.Join(destPath, pathName)
 
@@ -202,17 +206,20 @@ func downloadDir(client *sdk.QuarkClient, fid, path, destPath string) *CLIResult
 			Message: response.Message,
 		}
 	}
-	maxDownloadCount := 3
 	if quarkFileInfos, ok := response.Data["list"].([]sdk.QuarkFileInfo); ok {
-		var wg errgroup.Group
-
-		wg.SetLimit(maxDownloadCount)
-
-		p := mpb.New(mpb.WithWidth(64))
 
 		for i, qfi := range quarkFileInfos {
+
+			if qfi.IsDirectory {
+				if res := downloadDir(client, wg, p, qfi.Path, destPath); res != nil {
+					return res
+				}
+				continue
+			}
+
 			wg.Go(func(nu int, qfi sdk.QuarkFileInfo) func() error {
 				return func() error {
+
 					dir := filepath.Dir(qfi.Path)
 					fileName := filepath.Base(qfi.Name)
 
