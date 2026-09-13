@@ -25,7 +25,7 @@
 
 - 用户信息与网盘目录列表、文件详情、上传/下载、创建目录、移动/复制/重命名/删除
 - 分享创建与取消、分享列表、转存他人分享
-- JSON 输出、管道模式（与 `jq` 等组合）；可选 **OpenClaw** 技能（见 [openclaw/kuake_skill/](openclaw/kuake_skill/)）：普通用户只需安装 [Releases](https://github.com/zhangjingwei/kuake_cli/releases) 中的 `kuake`、配置 `PATH` 与 `KUAKE_COOKIE`（说明见 [openclaw/kuake_skill/SKILL.md](openclaw/kuake_skill/SKILL.md) 与 [docs/cli.md](docs/cli.md)）
+- JSON 输出、管道模式（与 `jq` 等组合）；可选 **OpenClaw** 技能（见 [openclaw/kuake_skill/](openclaw/kuake_skill/)）：普通用户只需安装 [Releases](https://github.com/zwcway/kuake_cli/releases) 中的 `kuake`、配置 `PATH` 与 `KUAKE_COOKIE`（说明见 [openclaw/kuake_skill/SKILL.md](openclaw/kuake_skill/SKILL.md) 与 [docs/cli.md](docs/cli.md)）
 - **`kuake-mcp` MCP server**：以 stdio 方式将 14 个网盘操作暴露为 MCP 工具，配合 Claude Code 等 MCP 客户端使用；通过 `KUAKE_DENY_OPS` / `KUAKE_DENY_PATHS` / `KUAKE_DENY_EXTS` / `KUAKE_MAX_UPLOAD_MB` / `KUAKE_DOWNLOAD_DIR` 等环境变量控制可执行的操作与沙箱（见 [.mcp.json.example](.mcp.json.example)）
 
 > **v1.5.0 BREAKING**：`config.json` 已不再支持，凭证只从 `KUAKE_COOKIE` / `KUAKE_PUS+KUAKE_PUUS` / `-cookies` 三种环境/参数方式读取；`-c, --config` 选项已移除。升级请将原 `config.json` 中的 token 改写为 `.env` 中的 `KUAKE_COOKIE`。
@@ -49,7 +49,7 @@
 需要 **Go 1.25+**（与 `go.mod` 一致）与 Git。
 
 ```bash
-git clone https://github.com/zhangjingwei/kuake_cli.git
+git clone https://github.com/zwcway/kuake_cli.git
 cd kuake_cli
 chmod +x build.sh
 ./build.sh
@@ -59,7 +59,7 @@ chmod +x build.sh
 
 ### 预编译二进制
 
-从 [Releases](https://github.com/zhangjingwei/kuake_cli/releases) 下载对应平台文件，文件名与版本以 Release 页为准。
+从 [Releases](https://github.com/zwcway/kuake_cli/releases) 下载对应平台文件，文件名与版本以 Release 页为准。
 
 ## 快速开始
 
@@ -82,7 +82,7 @@ chmod +x build.sh
 | [docs/cli.md](docs/cli.md)                     | CLI 配置、命令表、JSON 约定与示例                                              |
 | [docs/CHANGELOG.md](docs/CHANGELOG.md)         | 版本变更记录                                                             |
 | [docs/DISCLAIMER.md](docs/DISCLAIMER.md)       | 完整免责声明                                                             |
-| [openclaw/kuake_skill/](openclaw/kuake_skill/) | 给 **OpenClaw 普通用户**：把内含 `SKILL.md` 的文件夹配进 OpenClaw 的技能目录；另从 [Releases](https://github.com/zhangjingwei/kuake_cli/releases) 安装 `kuake` 并加入 `PATH`，按 [docs/cli.md](docs/cli.md) 配置 `KUAKE_COOKIE` 等即可，无需本仓库其它文件 |
+| [openclaw/kuake_skill/](openclaw/kuake_skill/) | 给 **OpenClaw 普通用户**：把内含 `SKILL.md` 的文件夹配进 OpenClaw 的技能目录；另从 [Releases](https://github.com/zwcway/kuake_cli/releases) 安装 `kuake` 并加入 `PATH`，按 [docs/cli.md](docs/cli.md) 配置 `KUAKE_COOKIE` 等即可，无需本仓库其它文件 |
 | [.mcp.json.example](.mcp.json.example)         | `kuake-mcp` MCP server 的 Claude Code 集成模板：列出 `KUAKE_COOKIE` 与黑名单/沙箱环境变量；复制为 `.mcp.json` 并填入实际 cookie 即可（已加入 `.gitignore`，不会被提交） |
 
 
@@ -100,7 +100,7 @@ go test ./... -count=1
 **作为其它项目的 Go 模块依赖**：
 
 ```bash
-go get github.com/zhangjingwei/kuake_cli@latest
+go get github.com/zwcway/kuake_cli@latest
 ```
 
 ## 免责声明
@@ -113,10 +113,10 @@ go get github.com/zhangjingwei/kuake_cli@latest
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/chart?repos=zhangjingwei/kuake_cli&type=date&legend=top-left)](https://www.star-history.com/?type=date&repos=zhangjingwei%2Fkuake_cli)
+[![Star History Chart](https://api.star-history.com/chart?repos=zwcway/kuake_cli&type=date&legend=top-left)](https://www.star-history.com/?type=date&repos=zhangjingwei%2Fkuake_cli)
 
 ## 贡献者
 
-感谢通过 Issue、Pull Request 等形式参与本项目的所有人。完整贡献者统计见仓库 [Contributors](https://github.com/zhangjingwei/kuake_cli/graphs/contributors)。
+感谢通过 Issue、Pull Request 等形式参与本项目的所有人。完整贡献者统计见仓库 [Contributors](https://github.com/zwcway/kuake_cli/graphs/contributors)。
 
 欢迎提交 Issue 与 Pull Request。

@@ -5,8 +5,8 @@ import (
 
 	"github.com/mark3labs/mcp-go/mcp"
 	"github.com/mark3labs/mcp-go/server"
-	"github.com/zhangjingwei/kuake_cli/internal/guard"
-	"github.com/zhangjingwei/kuake_cli/sdk"
+	"github.com/zwcway/kuake_cli/internal/guard"
+	"github.com/zwcway/kuake_cli/sdk"
 )
 
 // ToolEntry pairs an MCP tool definition with its handler.

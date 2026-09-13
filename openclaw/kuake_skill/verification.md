@@ -4,7 +4,7 @@ This script verifies that the kuake skill can be loaded and used with OpenClaw a
 
 ## Prerequisites
 
-1. Install **`kuake`** from the project [Releases](https://github.com/zhangjingwei/kuake_cli/releases) for your platform, add it to `PATH`, then confirm:
+1. Install **`kuake`** from the project [Releases](https://github.com/zwcway/kuake_cli/releases) for your platform, add it to `PATH`, then confirm:
    ```bash
    kuake version
    ```

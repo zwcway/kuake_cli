@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zhangjingwei/kuake_cli/sdk/validation"
+	"github.com/zwcway/kuake_cli/sdk/validation"
 )
 
 // GetShareInfo 从文本中提取分享ID和提取码

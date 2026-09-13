@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zhangjingwei/kuake_cli/sdk/validation"
+	"github.com/zwcway/kuake_cli/sdk/validation"
 )
 
 // NewQuarkClient creates a Quark Drive client.

@@ -1,6 +1,6 @@
 # SDK 测试说明
 
-本目录包含了 `github.com/zhangjingwei/kuake_cli` 模块下 `sdk` 包的所有单元测试用例。
+本目录包含了 `github.com/zwcway/kuake_cli` 模块下 `sdk` 包的所有单元测试用例。
 
 ## 测试文件结构
 

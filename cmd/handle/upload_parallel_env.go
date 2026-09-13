@@ -1,11 +1,11 @@
-package main
+package handle
 
 import (
 	"os"
 	"strconv"
 	"strings"
 
-	"github.com/zhangjingwei/kuake_cli/sdk"
+	"github.com/zwcway/kuake_cli/sdk"
 )
 
 // resolveUploadParallelForProcess 返回应写入 KUAKE_UPLOAD_PARALLEL 的十进制字符串，或 "" 表示不设置。

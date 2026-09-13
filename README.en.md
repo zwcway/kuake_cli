@@ -25,7 +25,7 @@ This project is licensed under **AGPL-3.0**. **Commercial use** (including SaaS 
 
 - User profile, directory listing, file metadata, upload/download, create folder, move/copy/rename/delete
 - Create and revoke shares, list shares, save others’ shares to your drive
-- JSON output and pipe-friendly mode (e.g. with `jq`); optional **OpenClaw** skill ([openclaw/kuake_skill/](openclaw/kuake_skill/)): install `kuake` from [Releases](https://github.com/zhangjingwei/kuake_cli/releases), add it to `PATH`, set `KUAKE_COOKIE` (see [openclaw/kuake_skill/SKILL.md](openclaw/kuake_skill/SKILL.md) and [docs/cli.md](docs/cli.md))
+- JSON output and pipe-friendly mode (e.g. with `jq`); optional **OpenClaw** skill ([openclaw/kuake_skill/](openclaw/kuake_skill/)): install `kuake` from [Releases](https://github.com/zwcway/kuake_cli/releases), add it to `PATH`, set `KUAKE_COOKIE` (see [openclaw/kuake_skill/SKILL.md](openclaw/kuake_skill/SKILL.md) and [docs/cli.md](docs/cli.md))
 - **`kuake-mcp` MCP server**: a stdio MCP server exposing the 14 drive operations as MCP tools for clients like Claude Code. An env-driven blacklist (`KUAKE_DENY_OPS` / `KUAKE_DENY_PATHS` / `KUAKE_DENY_EXTS` / `KUAKE_MAX_UPLOAD_MB` / `KUAKE_DOWNLOAD_DIR`) restricts which operations and paths the MCP client can reach (see [.mcp.json.example](.mcp.json.example))
 
 > **v1.5.0 BREAKING:** `config.json` support has been removed. Credentials must come from `KUAKE_COOKIE`, `KUAKE_PUS+KUAKE_PUUS`, or `-cookies` only; the `-c, --config` flag is gone. Migrate by moving the token into `KUAKE_COOKIE` (a `.env` file works).
@@ -49,7 +49,7 @@ More documentation:
 Requires **Go 1.25+** (as in `go.mod`) and Git.
 
 ```bash
-git clone https://github.com/zhangjingwei/kuake_cli.git
+git clone https://github.com/zwcway/kuake_cli.git
 cd kuake_cli
 chmod +x build.sh
 ./build.sh
@@ -59,7 +59,7 @@ Artifacts are written under `dist/`: CLI as `kuake-{version}-{os}-{arch}` and MC
 
 ### Prebuilt binaries
 
-Download the archive for your OS from [Releases](https://github.com/zhangjingwei/kuake_cli/releases). Exact filenames follow the release page for each version.
+Download the archive for your OS from [Releases](https://github.com/zwcway/kuake_cli/releases). Exact filenames follow the release page for each version.
 
 ## Quick start
 
@@ -81,7 +81,7 @@ See [docs/cli.md](docs/cli.md) for flags and credential fallbacks. For running f
 | [docs/cli.md](docs/cli.md) | CLI configuration, commands, JSON conventions, examples |
 | [docs/CHANGELOG.md](docs/CHANGELOG.md) | Release history |
 | [docs/DISCLAIMER.md](docs/DISCLAIMER.md) | Full disclaimer |
-| [openclaw/kuake_skill/](openclaw/kuake_skill/) | **OpenClaw users:** add the folder that contains `SKILL.md` to your OpenClaw skill paths; install `kuake` from [Releases](https://github.com/zhangjingwei/kuake_cli/releases) and `PATH`, configure `KUAKE_COOKIE` per [docs/cli.md](docs/cli.md). No other files from this repo are required. |
+| [openclaw/kuake_skill/](openclaw/kuake_skill/) | **OpenClaw users:** add the folder that contains `SKILL.md` to your OpenClaw skill paths; install `kuake` from [Releases](https://github.com/zwcway/kuake_cli/releases) and `PATH`, configure `KUAKE_COOKIE` per [docs/cli.md](docs/cli.md). No other files from this repo are required. |
 | [.mcp.json.example](.mcp.json.example) | Claude Code MCP integration template for `kuake-mcp`: shows `KUAKE_COOKIE` plus blacklist/sandbox env vars. Copy to `.mcp.json` with your real cookie (already in `.gitignore`). |
 
 ## Development
@@ -98,7 +98,7 @@ Lint rules live in [.golangci.yml](.golangci.yml). Install the linter with e.g. 
 **As a Go module dependency** in another project:
 
 ```bash
-go get github.com/zhangjingwei/kuake_cli@latest
+go get github.com/zwcway/kuake_cli@latest
 ```
 
 ## Disclaimer
@@ -111,10 +111,10 @@ This project is under **AGPL-3.0**; see [LICENSE](LICENSE). Derivative works mus
 
 ## Star history
 
-[![Star History Chart](https://api.star-history.com/chart?repos=zhangjingwei/kuake_cli&type=date&legend=top-left)](https://www.star-history.com/?type=date&repos=zhangjingwei%2Fkuake_cli)
+[![Star History Chart](https://api.star-history.com/chart?repos=zwcway/kuake_cli&type=date&legend=top-left)](https://www.star-history.com/?type=date&repos=zhangjingwei%2Fkuake_cli)
 
 ## Contributors
 
-Thanks to everyone who participates via issues and pull requests. Full statistics: [Contributors](https://github.com/zhangjingwei/kuake_cli/graphs/contributors).
+Thanks to everyone who participates via issues and pull requests. Full statistics: [Contributors](https://github.com/zwcway/kuake_cli/graphs/contributors).
 
 Issues and pull requests are welcome.

@@ -26,7 +26,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/zhangjingwei/kuake_cli/sdk/validation"
+	"github.com/zwcway/kuake_cli/sdk/validation"
 )
 
 // isRetryableError 判断错误是否为可重试的瞬时网络故障

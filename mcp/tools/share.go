@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"github.com/mark3labs/mcp-go/mcp"
-	"github.com/zhangjingwei/kuake_cli/internal/guard"
-	"github.com/zhangjingwei/kuake_cli/sdk"
+	"github.com/zwcway/kuake_cli/internal/guard"
+	"github.com/zwcway/kuake_cli/sdk"
 )
 
 // ShareTools returns the 5 share and user tool entries.

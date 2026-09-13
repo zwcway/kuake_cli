@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/zhangjingwei/kuake_cli/sdk/validation"
+	"github.com/zwcway/kuake_cli/sdk/validation"
 )
 
 func TestGetMyShareList_InvalidPage_ReturnsValidationError(t *testing.T) {

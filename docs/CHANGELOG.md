@@ -40,7 +40,7 @@
 - **认证凭证来源优先级**调整为：`KUAKE_COOKIE`（trim 后非空）优先于 `-cookies` / `--cookies`，再优先于配置文件。曾依赖「命令行覆盖已 export 的 `KUAKE_COOKIE`」的脚本须先清除环境变量（POSIX: `unset KUAKE_COOKIE`；PowerShell: `Remove-Item Env:KUAKE_COOKIE`）或改用配置文件。
 - **上传**：未传 `--max_upload_parallel` 时，`kuake` 会读取 `KUAKE_UPLOAD_PARALLEL`（1–16）；传入 flag 时 **flag 优先于环境变量**。
 - **文档**：已移除「`kuake` 二进制通过 `KUAKE_PATH` 解析路径」的表述；请通过系统 **PATH** 或包装脚本定位 `kuake`。
-- **Go module（BREAKING）**：`module` 路径改为 `github.com/zhangjingwei/kuake_cli`，与 GitHub 仓库 `zhangjingwei/kuake_cli` 对齐，可使用 `go get github.com/zhangjingwei/kuake_cli@<版本>`。请将原 `import "kuake_sdk/..."` 全部改为 `import "github.com/zhangjingwei/kuake_cli/..."`。
+- **Go module（BREAKING）**：`module` 路径改为 `github.com/zwcway/kuake_cli`，与 GitHub 仓库 `zwcway/kuake_cli` 对齐，可使用 `go get github.com/zwcway/kuake_cli@<版本>`。请将原 `import "kuake_sdk/..."` 全部改为 `import "github.com/zwcway/kuake_cli/..."`。
 
 ### 构建、发布与文档
 

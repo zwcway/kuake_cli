@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/mark3labs/mcp-go/server"
-	"github.com/zhangjingwei/kuake_cli/internal/guard"
-	"github.com/zhangjingwei/kuake_cli/mcp/tools"
-	"github.com/zhangjingwei/kuake_cli/sdk"
+	"github.com/zwcway/kuake_cli/internal/guard"
+	"github.com/zwcway/kuake_cli/mcp/tools"
+	"github.com/zwcway/kuake_cli/sdk"
 )
 
 func newMCPServer(client *sdk.QuarkClient, g *guard.Guard) *server.MCPServer {
